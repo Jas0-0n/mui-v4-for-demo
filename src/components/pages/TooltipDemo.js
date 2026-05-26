@@ -78,7 +78,7 @@ function TooltipDemo() {
                             }
                             arrow
                             interactive
-                            leaveDelay={500}
+                            leaveDelay={3000}
                         >
                             <Badge badgeContent={1} color="primary" overlap="rectangle">
                                 <Button variant="outlined">采购订单</Button>
@@ -127,7 +127,7 @@ function TooltipDemo() {
                             }
                             arrow
                             interactive
-                            leaveDelay={500}
+                            leaveDelay={3000}
                         >
                             <Badge badgeContent={2} color="primary" overlap="rectangle">
                                 <Button variant="outlined">PO睇位记录</Button>
@@ -173,7 +173,7 @@ function TooltipDemo() {
                             }
                             arrow
                             interactive
-                            leaveDelay={500}
+                            leaveDelay={3000}
                         >
                             <Badge badgeContent={2} color="primary" overlap="rectangle">
                                 <Button variant="outlined">睇位PO公司</Button>
@@ -220,7 +220,7 @@ function TooltipDemo() {
                             }
                             arrow
                             interactive
-                            leaveDelay={500}
+                            leaveDelay={3000}
                         >
                             <Button variant="contained" color="primary">
                                 采购订单
@@ -250,7 +250,7 @@ function TooltipDemo() {
                             }
                             arrow
                             interactive
-                            leaveDelay={800}
+                            leaveDelay={3000}
                         >
                             <Button variant="contained" color="secondary">
                                 Copy API key
@@ -280,7 +280,7 @@ function TooltipDemo() {
                             }
                             arrow
                             interactive
-                            leaveDelay={1000}
+                            leaveDelay={3000}
                         >
                             <Button variant="outlined">[安裝服務]</Button>
                         </Tooltip>
