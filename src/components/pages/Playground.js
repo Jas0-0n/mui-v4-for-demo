@@ -62,30 +62,6 @@ function Playground() {
                     </Box>
                 </Paper>
             </div>
-
-            <div className={classes.section}>
-                <Paper className={classes.paper}>
-                    <Typography variant="h6" className={classes.subtitle}>
-                        Customized TextField
-                    </Typography>
-                    <Box className={classes.row}>
-                        <TextField label="Outlined" variant="outlined" />
-                        <TextField label="Filled" variant="filled" />
-                        <TextField label="Standard" variant="standard" />
-                    </Box>
-                </Paper>
-            </div>
-
-            <div className={classes.section}>
-                <Paper className={classes.paper}>
-                    <Typography variant="h6" className={classes.subtitle}>
-                        Customized Slider
-                    </Typography>
-                    <Box style={{ padding: "0 16px", maxWidth: 400 }}>
-                        <Slider defaultValue={30} />
-                    </Box>
-                </Paper>
-            </div>
         </div>
     );
 }
