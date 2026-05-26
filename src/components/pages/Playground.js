@@ -101,30 +101,6 @@ function Playground() {
                     </Box>
                 </Paper>
             </div>
-
-            <div className={classes.section}>
-                <Paper className={classes.paper}>
-                    <Typography variant="h6" className={classes.subtitle}>
-                        Customized Card
-                    </Typography>
-                    <Box style={{ maxWidth: 400 }}>
-                        <Card>
-                            <CardContent>
-                                <Typography variant="h6">Custom Card</Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    Customize this card with your own styles and content.
-                                </Typography>
-                            </CardContent>
-                            <Divider />
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    Action
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Box>
-                </Paper>
-            </div>
         </div>
     );
 }
