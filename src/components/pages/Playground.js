@@ -86,21 +86,6 @@ function Playground() {
                     </Box>
                 </Paper>
             </div>
-
-            <div className={classes.section}>
-                <Paper className={classes.paper}>
-                    <Typography variant="h6" className={classes.subtitle}>
-                        Customized Chip, Badge &amp; Avatar
-                    </Typography>
-                    <Box className={classes.row}>
-                        <Chip label="Default" />
-                        <Chip label="Primary" color="primary" />
-                        <Badge badgeContent={4} color="primary">
-                            <Avatar>U</Avatar>
-                        </Badge>
-                    </Box>
-                </Paper>
-            </div>
         </div>
     );
 }
