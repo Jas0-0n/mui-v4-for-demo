@@ -101,27 +101,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const menuItems = [
-  { text: 'Dashboard', icon: <HomeIcon />, component: 'dashboard' },
-  { text: 'Playground', icon: <BuildIcon />, component: 'playground' },
-  { text: 'Buttons', icon: <TouchAppIcon />, component: 'buttons' },
-  { text: 'Typography', icon: <TextFieldsIcon />, component: 'typography' },
-  { text: 'TextField', icon: <ChatBubbleOutlineIcon />, component: 'textfield' },
-  { text: 'Grid', icon: <GridOnIcon />, component: 'grid' },
-  { text: 'Table', icon: <TableChartIcon />, component: 'table' },
-  { text: 'Card', icon: <CardGiftcardIcon />, component: 'card' },
-  { text: 'Dialog', icon: <CropOriginalIcon />, component: 'dialog' },
-  { text: 'Icons', icon: <InsertEmoticonIcon />, component: 'icons' },
-  { text: 'Snackbar', icon: <NotificationsIcon />, component: 'snackbar' },
-  { text: 'Tabs', icon: <TabIcon />, component: 'tabs' },
-  { text: 'Select / Menu', icon: <ArrowDropDownCircleIcon />, component: 'select' },
-  { text: 'Checkbox / Radio / Switch', icon: <CheckBoxIcon />, component: 'selection' },
-  { text: 'Slider', icon: <TuneIcon />, component: 'slider' },
-  { text: 'Progress', icon: <TrendingUpIcon />, component: 'progress' },
-  { text: 'Chip / Badge / Avatar', icon: <LabelIcon />, component: 'chip' },
-  { text: 'Paper / Container', icon: <LayersIcon />, component: 'paper' },
-  { text: 'List', icon: <ListIcon />, component: 'list' },
-  { text: 'Tooltip', icon: <HelpOutlineIcon />, component: 'tooltip' },
   { text: 'AppBar / Drawer', icon: <ViewCompactIcon />, component: 'nav' },
+  { text: 'Buttons', icon: <TouchAppIcon />, component: 'buttons' },
+  { text: 'Card', icon: <CardGiftcardIcon />, component: 'card' },
+  { text: 'Chip / Badge / Avatar', icon: <LabelIcon />, component: 'chip' },
+  { text: 'Checkbox / Radio / Switch', icon: <CheckBoxIcon />, component: 'selection' },
+  { text: 'Dashboard', icon: <HomeIcon />, component: 'dashboard' },
+  { text: 'Dialog', icon: <CropOriginalIcon />, component: 'dialog' },
+  { text: 'Grid', icon: <GridOnIcon />, component: 'grid' },
+  { text: 'Icons', icon: <InsertEmoticonIcon />, component: 'icons' },
+  { text: 'List', icon: <ListIcon />, component: 'list' },
+  { text: 'Paper / Container', icon: <LayersIcon />, component: 'paper' },
+  { text: 'Playground', icon: <BuildIcon />, component: 'playground' },
+  { text: 'Progress', icon: <TrendingUpIcon />, component: 'progress' },
+  { text: 'Select / Menu', icon: <ArrowDropDownCircleIcon />, component: 'select' },
+  { text: 'Slider', icon: <TuneIcon />, component: 'slider' },
+  { text: 'Snackbar', icon: <NotificationsIcon />, component: 'snackbar' },
+  { text: 'Table', icon: <TableChartIcon />, component: 'table' },
+  { text: 'Tabs', icon: <TabIcon />, component: 'tabs' },
+  { text: 'TextField', icon: <ChatBubbleOutlineIcon />, component: 'textfield' },
+  { text: 'Tooltip', icon: <HelpOutlineIcon />, component: 'tooltip' },
+  { text: 'Typography', icon: <TextFieldsIcon />, component: 'typography' },
 ];
 
 function App() {
@@ -136,26 +136,14 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
-      case 'dashboard': return <Dashboard onNavigate={setActivePage} />;
-      case 'playground': return <Playground />;
       case 'buttons': return <ButtonsDemo />;
-      case 'typography': return <TypographyDemo />;
-      case 'textfield': return <TextFieldDemo />;
-      case 'grid': return <GridDemo />;
-      case 'table': return <TableDemo />;
       case 'card': return <CardDemo />;
-      case 'dialog': return <DialogDemo />;
-      case 'icons': return <IconsDemo />;
-      case 'snackbar': return <SnackbarDemo />;
-      case 'tabs': return <TabsDemo />;
-      case 'select': return <SelectMenuDemo />;
-      case 'selection': return <SelectionControlsDemo />;
-      case 'slider': return <SliderDemo />;
-      case 'progress': return <ProgressDemo />;
       case 'chip': return <ChipBadgeAvatarDemo />;
-      case 'paper': return <PaperContainerDemo />;
+      case 'dashboard': return <Dashboard onNavigate={setActivePage} />;
+      case 'dialog': return <DialogDemo />;
+      case 'grid': return <GridDemo />;
+      case 'icons': return <IconsDemo />;
       case 'list': return <ListDemo />;
-      case 'tooltip': return <TooltipDemo />;
       case 'nav': return (
         <Typography variant="body1" paragraph>
           The current page itself is the AppBar + Drawer navigation demo. The top AppBar
@@ -163,6 +151,18 @@ function App() {
           the Drawer becomes a temporary drawer opened via the hamburger menu icon.
         </Typography>
       );
+      case 'paper': return <PaperContainerDemo />;
+      case 'playground': return <Playground />;
+      case 'progress': return <ProgressDemo />;
+      case 'select': return <SelectMenuDemo />;
+      case 'selection': return <SelectionControlsDemo />;
+      case 'slider': return <SliderDemo />;
+      case 'snackbar': return <SnackbarDemo />;
+      case 'table': return <TableDemo />;
+      case 'tabs': return <TabsDemo />;
+      case 'textfield': return <TextFieldDemo />;
+      case 'tooltip': return <TooltipDemo />;
+      case 'typography': return <TypographyDemo />;
       default: return <Dashboard />;
     }
   };
