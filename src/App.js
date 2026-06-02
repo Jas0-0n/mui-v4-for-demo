@@ -68,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
+    zIndex: theme.zIndex.drawer + 1,
     [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
@@ -80,9 +81,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   toolbar: theme.mixins.toolbar,
+  contentToolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: '#2C3E50',
+    color: '#FFFFFF',
   },
   content: {
     flexGrow: 1,
@@ -90,23 +93,69 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(4),
     },
+    backgroundColor: '#FFFFFF',
   },
   title: {
     flexGrow: 1,
   },
   activeItem: {
-    backgroundColor: theme.palette.action.selected,
-    borderLeft: `3px solid ${theme.palette.primary.main}`,
+    backgroundColor: '#3498DB',
+    color: '#FFFFFF',
+    borderLeft: `3px solid #3498DB`,
+    '& .MuiListItemIcon-root': {
+      color: '#FFFFFF',
+    },
+    '& .MuiListItemText-primary': {
+      color: '#FFFFFF',
+      fontWeight: 600,
+    },
+  },
+  sidebarToolbar: {
+    backgroundColor: '#2C3E50',
+    height: 60,
+    color: '#FFFFFF',
+    justifyContent: 'space-between',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 16px',
+  },
+  sidebarLogo: {
+    fontWeight: 700,
+    color: '#FFFFFF',
+    fontSize: 18,
+  },
+  sidebarListItem: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    minHeight: 48,
+    '&:hover': {
+      backgroundColor: '#2980B9',
+      color: '#FFFFFF',
+      '& .MuiListItemIcon-root': {
+        color: '#FFFFFF',
+      },
+      '& .MuiListItemText-primary': {
+        color: '#FFFFFF',
+      },
+    },
+    '& .MuiListItemIcon-root': {
+      color: 'rgba(255, 255, 255, 0.75)',
+      minWidth: 40,
+    },
+    '& .MuiListItemText-primary': {
+      color: 'rgba(255, 255, 255, 0.9)',
+      fontSize: 13,
+    },
   },
 }));
 
 const menuItems = [
+  { text: 'Dashboard', icon: <HomeIcon />, component: 'dashboard' },
   { text: 'AppBar / Drawer', icon: <ViewCompactIcon />, component: 'nav' },
   { text: 'Buttons', icon: <TouchAppIcon />, component: 'buttons' },
   { text: 'Card', icon: <CardGiftcardIcon />, component: 'card' },
   { text: 'Chip / Badge / Avatar', icon: <LabelIcon />, component: 'chip' },
   { text: 'Checkbox / Radio / Switch', icon: <CheckBoxIcon />, component: 'selection' },
-  { text: 'Dashboard', icon: <HomeIcon />, component: 'dashboard' },
   { text: 'Dialog', icon: <CropOriginalIcon />, component: 'dialog' },
   { text: 'Grid', icon: <GridOnIcon />, component: 'grid' },
   { text: 'Icons', icon: <InsertEmoticonIcon />, component: 'icons' },
@@ -168,15 +217,8 @@ function App() {
   };
 
   const drawer = (
-    <div>
-      <div className={classes.toolbar}>
-        <Toolbar>
-          <Typography variant="h6" noWrap style={{ fontWeight: 700 }}>
-            MUI v4 Demo
-          </Typography>
-        </Toolbar>
-      </div>
-      <List>
+    <div className={classes.root}>
+      <List style={{ padding: '8px 0' }}>
         {menuItems.map((item) => (
           <ListItem
             button
@@ -185,7 +227,7 @@ function App() {
               setActivePage(item.component);
               setMobileOpen(false);
             }}
-            className={activePage === item.component ? classes.activeItem : ''}
+            className={`${classes.sidebarListItem} ${activePage === item.component ? classes.activeItem : ''}`}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.text} />

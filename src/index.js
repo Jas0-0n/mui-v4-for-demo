@@ -7,17 +7,39 @@ import App from './App';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#3498DB',
+      dark: '#2980B9',
+      light: '#5DADE2',
     },
-    secondary: {
-      main: '#dc004e',
+    sidebar: {
+      main: '#2C3E50',
+      hover: '#2980B9',
+      active: '#3498DB',
     },
     background: {
-      default: '#f5f5f5',
+      default: '#FFFFFF',
+      paper: '#FFFFFF',
     },
+    text: {
+      primary: '#333333',
+      secondary: '#999999',
+    },
+    success: {
+      main: '#2ECC71',
+    },
+    error: {
+      main: '#E74C3C',
+      dark: '#C0392B',
+    },
+    divider: '#EAEAEA',
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"PingFang SC", "Microsoft YaHei", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontSize: 13,
+    button: {
+      fontSize: 12,
+      textTransform: 'none',
+    },
   },
 });
 

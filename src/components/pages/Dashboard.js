@@ -6,6 +6,9 @@ import Chip from '@material-ui/core/Chip';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
   paper: {
     padding: theme.spacing(3),
     textAlign: 'center',
@@ -14,9 +17,10 @@ const useStyles = makeStyles((theme) => ({
   welcomePaper: {
     padding: theme.spacing(4),
     textAlign: 'center',
-    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+    background: theme.palette.primary.main,
     color: '#fff',
     marginBottom: theme.spacing(3),
+    elevation: 0,
   },
   featureTitle: {
     fontWeight: 600,
@@ -36,8 +40,9 @@ function Dashboard({ onNavigate }) {
   const components = [
     'AppBar / Drawer', 'Buttons', 'Card', 'Checkbox / Radio / Switch',
     'Chip / Badge / Avatar', 'Dialog', 'Grid', 'Icons', 'List',
-    'Paper / Container', 'Progress', 'Select / Menu', 'Slider', 'Snackbar',
-    'Tabs', 'Table', 'TextField', 'Tooltip', 'Typography',
+    'Paper / Container', 'Playground', 'Progress', 'Select / Menu',
+    'Slider', 'Snackbar', 'Tabs', 'Table', 'TextField', 'Tooltip',
+    'Typography',
   ];
 
   const stats = [
@@ -64,6 +69,7 @@ function Dashboard({ onNavigate }) {
     Progress: 'progress',
     'Chip / Badge / Avatar': 'chip',
     'Paper / Container': 'paper',
+    Playground: 'playground',
     List: 'list',
     Tooltip: 'tooltip',
     'AppBar / Drawer': 'nav',
@@ -71,16 +77,16 @@ function Dashboard({ onNavigate }) {
 
   return (
     <div>
-      <Paper className={classes.welcomePaper} elevation={3}>
+      <Paper className={classes.welcomePaper} elevation={0}>
         <Typography variant="h3" gutterBottom style={{ fontWeight: 700 }}>
           Material UI v4 Components
         </Typography>
-        <Typography variant="h6" style={{ opacity: 0.9 }}>
+        <Typography variant="h6" style={{ opacity: 0.85 }}>
           Interactive demo of core Material UI components built with React functional components &amp; hooks
         </Typography>
         <div className={classes.chipContainer}>
           {'@material-ui/core'.split().map((s) => (
-            <Chip key={s} label={s} style={{ backgroundColor: 'rgba(255,255,255,0.25)', color: '#fff' }} />
+            <Chip key={s} label={s} style={{ backgroundColor: 'rgba(255,255,255,0.2)', color: '#fff' }} />
           ))}
         </div>
       </Paper>
@@ -89,7 +95,7 @@ function Dashboard({ onNavigate }) {
         {stats.map((stat) => (
           <Grid item xs={6} sm={3} key={stat.label}>
             <Paper className={classes.paper} elevation={2}>
-              <Typography variant="h4" color="primary" style={{ fontWeight: 700 }}>
+              <Typography variant="h4" style={{ color: '#3498DB', fontWeight: 700 }}>
                 {stat.value}
               </Typography>
               <Typography variant="body2" color="textSecondary">
@@ -107,7 +113,7 @@ function Dashboard({ onNavigate }) {
               className={classes.paper}
               onClick={() => onNavigate && onNavigate(pageMapping[name])}
               style={{ cursor: 'pointer' }}
-              elevation={3}
+              elevation={2}
             >
               <Typography variant="body1" className={classes.featureTitle}>
                 {name}
